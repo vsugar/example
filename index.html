@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>听令小方块</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #content-wrap {
+            width: 600px;
+            float: left;
+        }
+
+        .main {
+            margin-bottom: 20px;
+        }
+
+        .clearfix:after {
+            content: '.';
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+            overflow: hidden;
+        }
+
+        .row .item, .col .item {
+            width: 50px;
+            height: 50px;
+
+        }
+
+        .row .item {
+            display: inline-block;
+            margin-right: -4.5px;
+            text-align: center;
+            line-height: 3em;
+        }
+
+        .row {
+            margin-left: 50px;
+        }
+
+        .col {
+            float: left;
+        }
+
+        .col .item {
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .box-wrap {
+            position: relative;
+            left: 0;
+            top: 0;
+            float: left;
+            width: 500px;
+            height: 500px;
+            border: 2px solid #000;
+            box-sizing: content-box;
+
+        }
+
+        .box {
+            float: left;
+            vertical-align: top;
+            width: 50px;
+            height: 50px;
+            outline: 1px solid #ccc;
+            box-sizing: border-box;
+
+        }
+
+        .flow {
+            position: absolute;
+            top: 150px;
+            left: 200px;
+            width: 50px;
+            height: 50px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            background: linear-gradient(to bottom, blue 20%, red 20%);
+        }
+
+        .btn-wrap {
+            width: 600px;
+            text-align: center;
+        }
+
+        .btn-wrap button {
+            height: 30px;
+            border: none;
+            padding: 0 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            color: #fff;
+            background-color: #269abc;
+        }
+
+        .exp {
+            float: left;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div id="content-wrap">
+
+    <!--横标-->
+    <div class="row">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+    </div>
+
+    <div class="main clearfix">
+        <!--竖标-->
+        <div class="col">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+            <div class="item">9</div>
+            <div class="item">10</div>
+        </div>
+
+        <!--方格-->
+        <div class="box-wrap clearfix">
+            <div class="box item00"></div>
+            <div class="box item01"></div>
+            <div class="box item02"></div>
+            <div class="box item03"></div>
+            <div class="box item04"></div>
+            <div class="box item05"></div>
+            <div class="box item06"></div>
+            <div class="box item07"></div>
+            <div class="box item08"></div>
+            <div class="box item09"></div>
+
+            <div class="box item10"></div>
+            <div class="box item11"></div>
+            <div class="box item12"></div>
+            <div class="box item13"></div>
+            <div class="box item14"></div>
+            <div class="box item15"></div>
+            <div class="box item16"></div>
+            <div class="box item17"></div>
+            <div class="box item18"></div>
+            <div class="box item19"></div>
+
+            <div class="box item20"></div>
+            <div class="box item21"></div>
+            <div class="box item22"></div>
+            <div class="box item23"></div>
+            <div class="box item24"></div>
+            <div class="box item25"></div>
+            <div class="box item26"></div>
+            <div class="box item27"></div>
+            <div class="box item28"></div>
+            <div class="box item29"></div>
+
+            <div class="box item30"></div>
+            <div class="box item31"></div>
+            <div class="box item32"></div>
+            <div class="box item33"></div>
+            <div class="box item34"></div>
+            <div class="box item35"></div>
+            <div class="box item36"></div>
+            <div class="box item37"></div>
+            <div class="box item38"></div>
+            <div class="box item39"></div>
+
+            <div class="box item40"></div>
+            <div class="box item41"></div>
+            <div class="box item42"></div>
+            <div class="box item43"></div>
+            <div class="box item44"></div>
+            <div class="box item45"></div>
+            <div class="box item46"></div>
+            <div class="box item47"></div>
+            <div class="box item48"></div>
+            <div class="box item49"></div>
+
+            <div class="box item50"></div>
+            <div class="box item51"></div>
+            <div class="box item52"></div>
+            <div class="box item53"></div>
+            <div class="box item54"></div>
+            <div class="box item55"></div>
+            <div class="box item56"></div>
+            <div class="box item57"></div>
+            <div class="box item58"></div>
+            <div class="box item59"></div>
+
+            <div class="box item60"></div>
+            <div class="box item61"></div>
+            <div class="box item62"></div>
+            <div class="box item63"></div>
+            <div class="box item64"></div>
+            <div class="box item65"></div>
+            <div class="box item66"></div>
+            <div class="box item67"></div>
+            <div class="box item68"></div>
+            <div class="box item69"></div>
+
+            <div class="box item70"></div>
+            <div class="box item71"></div>
+            <div class="box item72"></div>
+            <div class="box item73"></div>
+            <div class="box item74"></div>
+            <div class="box item75"></div>
+            <div class="box item76"></div>
+            <div class="box item77"></div>
+            <div class="box item78"></div>
+            <div class="box item79"></div>
+
+            <div class="box item80"></div>
+            <div class="box item81"></div>
+            <div class="box item82"></div>
+            <div class="box item83"></div>
+            <div class="box item84"></div>
+            <div class="box item85"></div>
+            <div class="box item86"></div>
+            <div class="box item87"></div>
+            <div class="box item88"></div>
+            <div class="box item89"></div>
+
+            <div class="box item90"></div>
+            <div class="box item91"></div>
+            <div class="box item92"></div>
+            <div class="box item93"></div>
+            <div class="box item94"></div>
+            <div class="box item95"></div>
+            <div class="box item96"></div>
+            <div class="box item97"></div>
+            <div class="box item98"></div>
+            <div class="box item99"></div>
+
+            <div class="flow"></div>
+        </div>
+    </div>
+    <div class="btn-wrap">
+        <button type="button" id="go">go</button>
+        <button type="button" id="tun-lef">turn left</button>
+        <button type="button" id="tun-rit">turn right</button>
+        <button type="button" id="tun-bac">turn back</button>
+    </div>
+    <div class="btn-wrap">
+        <button type="button" id="tra-lef">tra left</button>
+        <button type="button" id="tra-top">tra top</button>
+        <button type="button" id="tra-rig">tra right</button>
+        <button type="button" id="tra-bot">tra bottom</button>
+        <br>
+        <button type="button" id="mov-lef">mov left</button>
+        <button type="button" id="mov-top">mov top</button>
+        <button type="button" id="mov-rig">mov right</button>
+        <button type="button" id="mov-bot">mov bottom</button>
+    </div>
+</div>
+<div class="exp">
+    <h3>按钮说明</h3>
+    <p><strong>go</strong>: 向蓝色边方向前进一格</p>
+    <p><strong>turn left</strong>: 向左（逆时针）旋转90度</p>
+    <p><strong>turn right</strong>: 向右（顺时针）旋转90度</p>
+    <p><strong>turn back</strong>: 向右旋转180度</p>
+
+    <p><strong>tra left</strong>: 向屏幕的左侧移动一格，方向不变</p>
+    <p><strong>tra top</strong>: 向屏幕的上面移动一格，方向不变</p>
+    <p><strong>tra right</strong>: 向屏幕的右侧移动一格，方向不变</p>
+    <p><strong>tra bottom</strong>: 向屏幕的下面移动一格，方向不变</p>
+
+    <p><strong>mov left</strong>: 方向转向屏幕左侧，并向屏幕的左侧移动一格</p>
+    <p><strong>mov top</strong>: 方向转向屏幕上面，向屏幕的上面移动一格</p>
+    <p><strong>mov right</strong>: 方向转向屏幕右侧，向屏幕的右侧移动一格</p>
+    <p><strong>mov bottom</strong>: 方向转向屏幕下面，向屏幕的下面移动一格</p>
+</div>
+
+<script>
+    var boxWrap = document.getElementsByClassName('box-wrap')[0];
+    var flow = boxWrap.getElementsByClassName('flow')[0];
+
+    var go = document.getElementById('go');
+    var tunLef = document.getElementById('tun-lef');
+    var tunRit = document.getElementById('tun-rit');
+    var tunBac = document.getElementById('tun-bac');
+
+    var traLef = document.getElementById('tra-lef');
+    var traTop = document.getElementById('tra-top');
+    var traRig = document.getElementById('tra-rig');
+    var traBot = document.getElementById('tra-bot');
+
+    var movLef = document.getElementById('mov-lef');
+    var movTop = document.getElementById('mov-top');
+    var movRig = document.getElementById('mov-rig');
+    var movBot = document.getElementById('mov-bot');
+
+    var deg = 0, direction = 1;
+    var options = {
+        duration: 1000,
+        iterations: 1,
+        fill: 'forwards'
+    };
+
+    /*向左转和向右转的实现函数*/
+    function trans(x, y) {
+        var frames = [
+            {
+                borderRadius: 0,
+                transform: 'rotate(' + x + 'deg)'
+            },
+            {
+                borderRadius: '50%'
+            },
+            {
+                borderRadius: 0,
+                transform: 'rotate(' + y + 'deg)'
+            }
+        ];
+        flow.animate(frames, options);
+    }
+
+    /*点击向左转后*/
+    tunLef.onclick = function () {
+        trans(deg, (deg - 90));
+        deg -= 90;
+    };
+
+    /*点击向右转后*/
+    tunRit.onclick = function () {
+        trans(deg, (deg + 90));
+        deg += 90;
+    };
+
+    /*点击向后转*/
+    tunBac.onclick = function () {
+        trans(deg, (deg + 180));
+        deg += 180;
+
+    };
+
+    /*方向判断方法*/
+    function judge() {
+        if (deg >= 0) {
+            var i = deg % 360;
+            switch (i) {
+                case 0:
+                    direction = 1;
+                    break;
+                case 90:
+                    direction = 2;
+                    break;
+                case 180:
+                    direction = 3;
+                    break;
+                case 270:
+                    direction = 4;
+                    break;
+                default:
+                    return;
+            }
+        } else if (deg < 0) {
+            var j = deg % 360;
+            switch (j) {
+                case -90:
+                    direction = 4;
+                    break;
+                case -180:
+                    direction = 3;
+                    break;
+                case -270:
+                    direction = 2;
+                    break;
+                case 0:
+                    direction = 1;
+                    break;
+                default:
+                    return;
+            }
+        }
+    }
+
+    /*向前一步的方法一（上下）*/
+    function goFunc(m, n) {
+        var frames = [
+            {
+                top: m + 'px'
+            },
+            {
+                top: n + 'px'
+            }
+        ];
+        flow.animate(frames, options);
+    }
+
+    /*向前移动一步的方法二（左右）*/
+    function goFunc2(m, n) {
+        var frames = [
+            {
+                left: m + 'px'
+            },
+            {
+                left: n + 'px'
+            }
+        ];
+        flow.animate(frames, options);
+    }
+    /*向前一步*/
+    function forwork() {
+        judge();
+        var top = flow.offsetTop;
+        var left = flow.offsetLeft;
+        if (direction === 1) {
+            if (top >= 50) {
+                goFunc(top, (top - 50));
+            } else {
+                return false;
+            }
+        } else if (direction === 2) {
+            if (left <= 400) {
+                goFunc2(left, (left + 50));
+            } else {
+                return false
+            }
+        } else if (direction === 3) {
+            if (top <= 400) {
+                goFunc(top, (top + 50));
+            } else {
+                return false;
+            }
+        } else if (direction === 4) {
+            if (left >= 50) {
+                goFunc2(left, (left - 50));
+            }
+        }
+    }
+
+    /*点击向前一步*/
+    go.onclick = function () {
+        forwork();
+    };
+
+    /*向左右侧移动一格方法*/
+    function traFunc(a, b) {
+        var frames = [
+            {
+                left: a + 'px'
+            },
+            {
+                left: b + 'px'
+            }
+        ];
+        flow.animate(frames, options);
+    }
+
+    /*向上下侧移动一格的方法*/
+    function traFunc2(a, b) {
+        var frames = [
+            {
+                top: a + 'px'
+            },
+            {
+                top: b + 'px'
+            }
+        ];
+        flow.animate(frames, options);
+    }
+
+
+    traLef.onclick = function () {
+        var top = flow.offsetTop;
+        var left = flow.offsetLeft;
+
+        if (left >= 50 && left <= 400) {
+            traFunc(left, (left - 50));
+        } else {
+            //return false;
+        }
+
+    };
+
+    traRig.onclick = function () {
+        var top = flow.offsetTop;
+        var left = flow.offsetLeft;
+        if (left >= 50 && left <= 400) {
+            traFunc(left, (left + 50));
+        } else {
+            return false;
+        }
+    };
+
+    traTop.onclick = function () {
+        var top = flow.offsetTop;
+        var left = flow.offsetLeft;
+
+        if (top >= 50 && top <= 400) {
+            traFunc2(top, (top - 50));
+        } else {
+            return false;
+        }
+    };
+    traBot.onclick = function () {
+        var top = flow.offsetTop;
+        var left = flow.offsetLeft;
+
+        if (top >= 50 && top <= 400) {
+            traFunc2(top, (top + 50));
+        } else {
+            return false;
+        }
+    };
+
+    /*方向转向左右侧，并向左右侧移动一格*/
+    function mov(p, q, z, w) {
+        var frames = [
+            {
+                left: p + 'px',
+                borderRadius: 0,
+                transform: 'rotate(' + (z * 90) + 'deg)'
+            },
+            {
+                borderRadius: '50%'
+            },
+            {
+                left: q + 'px',
+                borderRadius: 0,
+                transform: 'rotate(' + w + 'deg)'
+            }
+        ];
+        flow.animate(frames, options);
+    }
+
+    /*方向转向上下侧，并向上下侧移动一格*/
+    function mov2(p, q, z, w) {
+        var frames = [
+            {
+                top: p + 'px',
+                borderRadius: 0,
+                transform: 'rotate(' + (z * 90) + 'deg)'
+            },
+            {
+                borderRadius: '50%'
+            },
+            {
+                top: q + 'px',
+                borderRadius: 0,
+                transform: 'rotate(' + w + 'deg)'
+            }
+        ];
+        flow.animate(frames, options);
+    }
+
+    movLef.onclick = function () {
+        judge();
+        var top = flow.offsetTop;
+        var left = flow.offsetLeft;
+        var tarDeg = 270;
+        var dir = direction - 1;
+        if (left >= 50 && left <= 400) {
+            mov(left, (left - 50), dir, tarDeg);
+            direction = 4;
+            deg = 270;
+        } else {
+            return false;
+        }
+    };
+    movRig.onclick = function () {
+        judge();
+        var top = flow.offsetTop;
+        var left = flow.offsetLeft;
+        var tarDeg = 90;
+        var dir = direction - 1;
+        if (left >= 50 && left <= 400) {
+            mov(left, (left + 50), dir, tarDeg);
+            direction = 2;
+            deg = 90;
+        } else {
+            return false;
+        }
+    };
+    movTop.onclick = function () {
+        judge();
+        var top = flow.offsetTop;
+        var left = flow.offsetLeft;
+        var tarDeg = 0;
+        var dir = direction - 1;
+        if (top >= 50 && top <= 400) {
+            mov2(top, (top - 50), dir, tarDeg);
+            direction = 1;
+            deg = 0;
+        } else {
+            return false;
+        }
+    };
+    movBot.onclick = function () {
+        judge();
+        var top = flow.offsetTop;
+        var left = flow.offsetLeft;
+        var tarDeg = 180;
+        var dir = direction - 1;
+        if (top >= 50 && top <= 400) {
+            mov2(top, (top + 50), dir, tarDeg);
+            direction = 3;
+            deg = 180;
+        } else {
+            return false;
+        }
+    };
+</script>
+</body>
+</html>
